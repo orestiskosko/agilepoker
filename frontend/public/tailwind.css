@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-main {
+    @apply p-3 bg-blue-600 text-white font-semibold rounded shadow-md hover:bg-blue-700 focus:outline-none disabled:opacity-50 transition-colors duration-300;
+  }
+  .btn-gray {
+    @apply p-3 bg-gray-600 text-white font-semibold rounded shadow-md hover:bg-gray-700 focus:outline-none disabled:opacity-50 transition-colors duration-300;
+  }
+  .btn-red {
+    @apply p-3 bg-red-600 text-white font-semibold rounded shadow-md hover:bg-red-700 focus:outline-none disabled:opacity-50 transition-colors duration-300;
+  }
+}
