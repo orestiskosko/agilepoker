@@ -17,7 +17,7 @@
         <div class="text-2xl">{$userStore?.username ?? ""}</div>
     </div>
     <div class="text-2xl mt-12">{$roomStore?.name ?? ""}</div>
-    <div class="flex-1 mt-3">
+    <div class="flex-1 mt-3 w-full">
         <Participants />
     </div>
     <div class="flex flex-col space-y-2 w-full">
