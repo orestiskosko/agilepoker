@@ -7,6 +7,7 @@
     let voteStartTime = now;
     let clockInterval = null;
 
+    $: isVoting = $roomStore.status === roomStore.RoomStatus.VOTING;
     $: timeDiffMillis = new Date(now - voteStartTime);
     $: seconds = timeDiffMillis.getSeconds();
     $: minutes = timeDiffMillis.getMinutes();
@@ -29,15 +30,12 @@
     <div
         transition:fade
         class="text-xl transition-colors font-bold"
-        class:text-transparent={$roomStore.status !== roomStore.RoomStatus.VOTING}
+        class:text-transparent={!isVoting}
     >
         {minutes < 10 ? "0" : ""}{minutes}:{seconds < 10 ? "0" : ""}{seconds}
     </div>
     {#if $roomStore.selectedItemId !== null}
-        <h3
-            class="text-3xl my-10"
-            class:animate-pulse={$roomStore.status === roomStore.RoomStatus.VOTING}
-        >
+        <h3 class="text-3xl my-10" class:animate-pulse={isVoting}>
             {selectedItemTitle}
         </h3>
     {:else}
