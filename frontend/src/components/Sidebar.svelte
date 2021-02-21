@@ -1,5 +1,5 @@
 <script>
-    import RoomParticipants from "./RoomParticipants.svelte";
+    import Participants from "./Participants.svelte";
     import Button from "./Button.svelte";
     import RoomLink from "./RoomLink.svelte";
     import * as roomStore from "../stores/roomStore";
@@ -18,7 +18,7 @@
     </div>
     <div class="text-2xl mt-12">{$roomStore?.name ?? ""}</div>
     <div class="flex-1 mt-3">
-        <RoomParticipants />
+        <Participants />
     </div>
     <div class="flex flex-col space-y-2 w-full">
         {#if isLeader}
