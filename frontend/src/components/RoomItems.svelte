@@ -25,7 +25,6 @@
         snackbarStore.show(`Item ready to vote.`);
         await wsconnection.invokeSetSelectedItem($roomStore.id, itemId);
         await wsconnection.invokeStartVoting($roomStore.id);
-        window.scrollTo({ top: 0, behavior: "smooth" });
     }
 </script>
 

@@ -64,6 +64,10 @@
     async function onStopVoteClicked() {
         await wsconnection.invokeStopVoting($roomStore.id);
     }
+
+    $: if ($roomStore.status === roomStore.RoomStatus.VOTING) {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
 </script>
 
 <MainScreen {isLoading}>
