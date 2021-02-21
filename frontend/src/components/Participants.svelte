@@ -11,14 +11,14 @@
     }
 </script>
 
-<div class="w-full flex flex-col space-y-3">
+<div class="flex flex-col space-y-3">
     {#each $roomStore.participants as participant (participant.id)}
         <div
             class="flex py-3 px-5 border rounded space-x-5 divide-x bg-white bg-opacity-50"
             class:bg-opacity-100={userHasVoted(participant.id)}
         >
-            <p class="flex-1">{participant.username}</p>
-            <p class="flex-grow-0 pl-5">
+            <div class="flex-1">{participant.username}</div>
+            <div class="flex-grow-0 pl-5">
                 {#if $roomStore.status === roomStore.RoomStatus.IDLE}
                     {$roomStore.votes.find(
                         (v) =>
@@ -27,11 +27,11 @@
                             v.itemId === $roomStore.selectedItemId
                     )?.vote ?? "?"}
                 {:else}
-                    {"-"}
+                    <div>-</div>
                 {/if}
-            </p>
+            </div>
         </div>
     {:else}
-        <p>No participants. That's weird.</p>
+        <div>No participants. That's weird.</div>
     {/each}
 </div>
