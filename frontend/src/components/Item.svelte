@@ -23,7 +23,7 @@
         <span class="ml-3">{item.data.key}</span>
     </div>
     <div class="flex-1 px-3 pt-3">
-        <span>{item.data.summary}</span>
+        {@html item.data.summary}
     </div>
     <div class="flex items-center  px-3 pt-3">
         {#if isLeader}
