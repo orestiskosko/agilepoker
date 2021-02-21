@@ -44,7 +44,9 @@
     {#if $roomStore.items.length}
         <div class="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {#each items as item (item.id)}
-                <Item {item} {isLeader} onClick={onItemClick} />
+                {#key item.id}
+                    <Item {item} {isLeader} onClick={onItemClick} />
+                {/key}
             {/each}
         </div>
     {:else}

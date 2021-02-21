@@ -1,4 +1,5 @@
 <script>
+    import { fade } from "svelte/transition";
     import * as roomStore from "../stores/roomStore";
 
     export let item;
@@ -7,6 +8,7 @@
 </script>
 
 <div
+    transition:fade
     class="flex flex-col justify-evenly py-3 border rounded space-y-3 divide-y bg-white bg-opacity-60 hover:bg-opacity-100"
     class:bg-blue-400={item.status === roomStore.ItemStatus.VOTING &&
         $roomStore.selectedItemId === item.id}
