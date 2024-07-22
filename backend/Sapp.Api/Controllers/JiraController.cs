@@ -25,7 +25,7 @@ namespace Sapp.Api.Controllers
             using var client = _httpClientFactory.CreateClient("jiraClient");
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
                 "Basic",
-                "b2tvc2tvbGV0b3NAaW5kZWF2b3IuY29tOkpUUHA3MnUyTnI5Um1vcTYyUGRwMDkwRQ==");
+                "<KEY>");
             
             var request = new HttpRequestMessage(
                 HttpMethod.Get,
